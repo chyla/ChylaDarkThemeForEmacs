@@ -1,9 +1,10 @@
-;;; chyla-dark-theme.el --- chyla.org - dark green color theme.
+;;; chyla-dark-theme.el --- Chyla.org - dark green color theme -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2018-2024 Adam Chyła
 ;; Author: Adam Chyła <adam@chyla.org> https://chyla.org/
 ;; URL: https://github.com/chyla/ChylaDarkThemeForEmacs
 ;; Version: 0.1
+;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -1226,8 +1227,7 @@ Also bind `class' to ((class color) (min-colors 89))."
   `(elscreen-tab-background-face ((t (:background ,chyla-dark-keyword))))
   `(elscreen-tab-control-face ((t (:foreground ,chyla-dark-white :background ,chyla-dark-keyword))))
   `(elscreen-tab-current-screen-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-selection))))
-  `(elscreen-tab-other-screen-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-highlight))))
-  ))
+  `(elscreen-tab-other-screen-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-highlight))))))
 
 ;;; Theme Variables
 (chyla-dark-with-color-variables
@@ -1265,8 +1265,7 @@ Also bind `class' to ((class color) (min-colors 89))."
        (340. . ,chyla-dark-keyword)
        (360. . ,chyla-dark-comment)))
    `(vc-annotate-very-old-color ,chyla-dark-comment)
-   `(vc-annotate-background ,chyla-dark-selection)
-   ))
+   `(vc-annotate-background ,chyla-dark-selection)))
 
 ;;; Footer
 
