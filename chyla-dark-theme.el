@@ -1,4 +1,4 @@
-;;; chyla-dark-theme.el --- chyla.org - green color theme.
+;;; chyla-dark-theme.el --- chyla.org - dark green color theme.
 
 ;; Copyright (C) 2018-2024 Adam Chyła
 ;; Author: Adam Chyła <adam@chyla.org> https://chyla.org/
@@ -34,26 +34,26 @@
 ;;; Color Palette
 
 (defvar chyla-dark-default-colors-alist
-  '(("chyla-dark-border"                 . "#d0d0d0")
-    ("chyla-dark-comment"                . "#555555")
-    ("chyla-dark-constant"               . "#0086b3")
+  '(("chyla-dark-border"                 . "#414141")
+    ("chyla-dark-comment"                . "#858585")
+    ("chyla-dark-constant"               . "#9cdcfe")
     ("chyla-dark-diff-added"             . "#eaffea")
     ("chyla-dark-diff-added-highlight"   . "#a6f3a6")
     ("chyla-dark-diff-changed"           . "#f8cca9")
     ("chyla-dark-diff-changed-highlight" . "#f6dac3")
     ("chyla-dark-diff-removed"           . "#ffecec")
     ("chyla-dark-diff-removed-highlight" . "#f8cbcb")
-    ("chyla-dark-function"               . "#183691")
-    ("chyla-dark-highlight"              . "#edf5dc")
-    ("chyla-dark-header-bg"              . "#5fa600")
+    ("chyla-dark-function"               . "#5ca1dc")
+    ("chyla-dark-highlight"              . "#1e231e")
+    ("chyla-dark-header-bg"              . "#407000")
     ("chyla-dark-header-fg"              . "#ffffff")
-    ("chyla-dark-header-inactive-fg"     . "#539100")
-    ("chyla-dark-header-inactive-bg"     . "#d9ded2")
+    ("chyla-dark-header-inactive-bg"     . "#051005")
     ("chyla-dark-html-tag"               . "#63a35c")
-    ("chyla-dark-keyword"                . "#539100")
-    ("chyla-dark-selection"              . "#d5dec4")
-    ("chyla-dark-string"                 . "#183691")
-    ("chyla-dark-text"                   . "#111111")
+    ("chyla-dark-keyword"                . "#5d9b00")
+    ("chyla-dark-selection"              . "#051005")
+    ("chyla-dark-string"                 . "#5ca1dc")
+    ("chyla-dark-text"                   . "#c9c9c9")
+    ("chyla-dark-background"             . "#121212")
     ("chyla-dark-white"                  . "#fbfbfb"))
   "List of chyla.org colors.
 Each element has the form (NAME . HEX).")
@@ -88,17 +88,17 @@ Also bind `class' to ((class color) (min-colors 89))."
    '(button ((t (:underline t))))
    `(link ((t (:foreground ,chyla-dark-keyword :underline t :weight bold))))
    `(link-visited ((t (:foreground ,chyla-dark-text :underline t :weight normal))))
-   `(default ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :family '("Ubuntu Mono" monospace)))))
+   `(default ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :family '("Ubuntu Mono" monospace)))))
    `(cursor ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-keyword))))
    `(escape-glyph ((t (:foreground ,chyla-dark-keyword :bold t))))
-   `(fringe ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
+   `(fringe ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
    `(header-line ((t (:foreground ,chyla-dark-keyword
                                   :background ,chyla-dark-selection
                                   :box (:line-width -1 :style released-button)))))
    `(highlight ((t (:background ,chyla-dark-highlight))))
    `(success ((t (:foreground ,chyla-dark-comment :weight bold))))
    `(warning ((t (:foreground ,chyla-dark-text :weight bold))))
-   `(tooltip ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
+   `(tooltip ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
 ;;;;; compilation
    `(compilation-column-face ((t (:foreground ,chyla-dark-keyword))))
    `(compilation-enter-directory-face ((t (:foreground ,chyla-dark-comment))))
@@ -126,7 +126,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(Info-quoted ((t (:inherit font-lock-constant-face))))
 ;;;;; isearch
    `(isearch ((t (:foreground ,chyla-dark-white :weight bold :background ,chyla-dark-selection))))
-   `(isearch-fail ((t (:foreground ,chyla-dark-border :background ,chyla-dark-white))))
+   `(isearch-fail ((t (:foreground ,chyla-dark-border :background ,chyla-dark-background))))
    `(lazy-highlight ((t (:foreground ,chyla-dark-text :weight bold :background ,chyla-dark-highlight))))
 
    `(menu ((t (:foreground ,chyla-dark-white :background ,chyla-dark-header-bg))))
@@ -135,14 +135,14 @@ Also bind `class' to ((class color) (min-colors 89))."
      ((,class (:foreground ,chyla-dark-header-fg
                            :background ,chyla-dark-header-bg))
       (t :inverse-video t)))
-   `(mode-line-buffer-id ((t (:foreground ,chyla-dark-white :weight bold :distant-foreground ,chyla-dark-header-inactive-fg))))
+   `(mode-line-buffer-id ((t (:foreground ,chyla-dark-white :weight bold))))
    `(mode-line-inactive
      ((t (:foreground ,chyla-dark-comment
                       :background ,chyla-dark-header-inactive-bg
-                      :box (:line-width -1 :color ,chyla-dark-border)))))
+                      :box (:line-width -1 :color ,chyla-dark-header-inactive-bg)))))
    `(region ((,class (:background ,chyla-dark-selection))
              (t :inverse-video t)))
-   `(secondary-selection ((t (:background ,chyla-dark-white))))
+   `(secondary-selection ((t (:background ,chyla-dark-background))))
    `(trailing-whitespace ((t (:background ,chyla-dark-diff-removed-highlight))))
    `(vertical-border ((t (:foreground ,chyla-dark-border))))
 ;;;;; font lock
@@ -184,12 +184,12 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;; Third-party
 ;;;;; ace-jump
    `(ace-jump-face-background
-     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :inverse-video nil))))
+     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :inverse-video nil))))
    `(ace-jump-face-foreground
-     ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white :inverse-video nil))))
+     ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background :inverse-video nil))))
 ;;;;; ace-window
    `(aw-background-face
-     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :inverse-video nil))))
+     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :inverse-video nil))))
    `(aw-leading-char-face ((t (:foreground ,chyla-dark-white :background ,chyla-dark-keyword :weight bold))))
 ;;;;; android mode
    `(android-mode-debug-face ((t (:foreground ,chyla-dark-text))))
@@ -228,34 +228,34 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(agda2-highlight-incomplete-pattern-face ((t (:foreground ,chyla-dark-white :background ,chyla-dark-text))))
    `(agda2-highlight-typechecks-face ((t (:background ,chyla-dark-text))))
 ;;;;; auto-complete
-   `(ac-candidate-face ((t (:background ,chyla-dark-white :foreground ,chyla-dark-text))))
+   `(ac-candidate-face ((t (:background ,chyla-dark-background :foreground ,chyla-dark-text))))
    `(ac-completion-face ((t (:background ,chyla-dark-selection :foreground ,chyla-dark-text))))
    `(ac-selection-face ((t (:background ,chyla-dark-selection :foreground ,chyla-dark-text))))
    `(popup-tip-face ((t (:background ,chyla-dark-text :foreground ,chyla-dark-white))))
    `(popup-scroll-bar-foreground-face ((t (:background ,chyla-dark-text))))
    `(popup-scroll-bar-background-face ((t (:background ,chyla-dark-comment))))
-   `(popup-isearch-match ((t (:background ,chyla-dark-white :foreground ,chyla-dark-text))))
+   `(popup-isearch-match ((t (:background ,chyla-dark-background :foreground ,chyla-dark-text))))
 ;;;;; avy
    `(avy-background-face
-     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :inverse-video nil))))
+     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :inverse-video nil))))
    `(avy-lead-face-0
-     ((t (:foreground ,chyla-dark-html-tag :background ,chyla-dark-white :inverse-video nil :weight bold))))
+     ((t (:foreground ,chyla-dark-html-tag :background ,chyla-dark-background :inverse-video nil :weight bold))))
    `(avy-lead-face-1
-     ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-white :inverse-video nil :weight bold))))
+     ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-background :inverse-video nil :weight bold))))
    `(avy-lead-face-2
-     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :inverse-video nil :weight bold))))
+     ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :inverse-video nil :weight bold))))
    `(avy-lead-face
-     ((t (:foreground ,chyla-dark-function :background ,chyla-dark-white :inverse-video nil :weight bold))))
+     ((t (:foreground ,chyla-dark-function :background ,chyla-dark-background :inverse-video nil :weight bold))))
 ;;;;; company-mode
-   `(company-tooltip ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(company-tooltip-annotation ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
+   `(company-tooltip ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(company-tooltip-annotation ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
    `(company-tooltip-annotation-selection ((t (:foreground ,chyla-dark-text :background ,chyla-dark-selection))))
    `(company-tooltip-selection ((t (:foreground ,chyla-dark-text :background ,chyla-dark-selection))))
    `(company-tooltip-mouse ((t (:background ,chyla-dark-selection))))
    `(company-tooltip-common ((t (:foreground ,chyla-dark-comment))))
    `(company-tooltip-common-selection ((t (:foreground ,chyla-dark-comment))))
    `(company-scrollbar-fg ((t (:background ,chyla-dark-text))))
-   `(company-scrollbar-bg ((t (:background ,chyla-dark-white))))
+   `(company-scrollbar-bg ((t (:background ,chyla-dark-background))))
    `(company-preview ((t (:background ,chyla-dark-comment))))
    `(company-preview-common ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-selection))))
 ;;;;; bm
@@ -281,7 +281,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(circe-originator-face ((t (:foreground ,chyla-dark-text))))
    `(circe-server-face ((t (:foreground ,chyla-dark-comment))))
    `(circe-topic-diff-new-face ((t (:foreground ,chyla-dark-text :weight bold))))
-   `(circe-prompt-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :weight bold))))
+   `(circe-prompt-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :weight bold))))
 ;;;;; context-coloring
    `(context-coloring-level-0-face ((t :foreground ,chyla-dark-text)))
    `(context-coloring-level-1-face ((t :foreground ,chyla-dark-function)))
@@ -306,10 +306,10 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(diff-refine-added   ((t (:background ,chyla-dark-diff-added-highlight :foreground ,chyla-dark-text))))
    `(diff-refine-change  ((t (:background ,chyla-dark-diff-changed-highlight :foreground ,chyla-dark-text))))
    `(diff-refine-removed ((t (:background ,chyla-dark-diff-removed-highlight :foreground ,chyla-dark-text))))
-   `(diff-header ((,class (:background ,chyla-dark-white))
+   `(diff-header ((,class (:background ,chyla-dark-background))
                   (t (:background ,chyla-dark-text :foreground ,chyla-dark-white))))
    `(diff-file-header
-     ((,class (:background ,chyla-dark-white :foreground ,chyla-dark-text :bold t))
+     ((,class (:background ,chyla-dark-background :foreground ,chyla-dark-text :bold t))
       (t (:background ,chyla-dark-text :foreground ,chyla-dark-white :bold t))))
 ;;;;; diff-hl
    `(diff-hl-change ((,class (:foreground ,chyla-dark-text :background ,chyla-dark-diff-added))))
@@ -351,18 +351,18 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ediff-current-diff-Ancestor ((t (:foreground ,chyla-dark-text :background ,chyla-dark-text))))
    `(ediff-current-diff-B ((t (:foreground ,chyla-dark-text :background ,chyla-dark-diff-added))))
    `(ediff-current-diff-C ((t (:foreground ,chyla-dark-text :background ,chyla-dark-text))))
-   `(ediff-even-diff-A ((t (:background ,chyla-dark-white))))
-   `(ediff-even-diff-Ancestor ((t (:background ,chyla-dark-white))))
-   `(ediff-even-diff-B ((t (:background ,chyla-dark-white))))
-   `(ediff-even-diff-C ((t (:background ,chyla-dark-white))))
+   `(ediff-even-diff-A ((t (:background ,chyla-dark-background))))
+   `(ediff-even-diff-Ancestor ((t (:background ,chyla-dark-background))))
+   `(ediff-even-diff-B ((t (:background ,chyla-dark-background))))
+   `(ediff-even-diff-C ((t (:background ,chyla-dark-background))))
    `(ediff-fine-diff-A ((t (:foreground ,chyla-dark-text :background ,chyla-dark-diff-removed-highlight :weight bold))))
    `(ediff-fine-diff-Ancestor ((t (:foreground ,chyla-dark-text :background ,chyla-dark-text weight bold))))
    `(ediff-fine-diff-B ((t (:foreground ,chyla-dark-text :background ,chyla-dark-diff-added-highlight :weight bold))))
    `(ediff-fine-diff-C ((t (:foreground ,chyla-dark-text :background ,chyla-dark-text :weight bold ))))
-   `(ediff-odd-diff-A ((t (:background ,chyla-dark-white))))
-   `(ediff-odd-diff-Ancestor ((t (:background ,chyla-dark-white))))
-   `(ediff-odd-diff-B ((t (:background ,chyla-dark-white))))
-   `(ediff-odd-diff-C ((t (:background ,chyla-dark-white))))
+   `(ediff-odd-diff-A ((t (:background ,chyla-dark-background))))
+   `(ediff-odd-diff-Ancestor ((t (:background ,chyla-dark-background))))
+   `(ediff-odd-diff-B ((t (:background ,chyla-dark-background))))
+   `(ediff-odd-diff-C ((t (:background ,chyla-dark-background))))
 ;;;;; egg
    `(egg-text-base ((t (:foreground ,chyla-dark-text))))
    `(egg-help-header-1 ((t (:foreground ,chyla-dark-keyword))))
@@ -392,7 +392,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(w3m-header-line-location-title ((t (:foreground ,chyla-dark-keyword
                                                      :underline t :weight bold))))
    '(w3m-history-current-url ((t (:inherit match))))
-   `(w3m-lnum ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
+   `(w3m-lnum ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
    `(w3m-lnum-match ((t (:background ,chyla-dark-selection
                                      :foreground ,chyla-dark-text
                                      :weight bold))))
@@ -414,12 +414,12 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(erc-nick-msg-face ((t (:inherit erc-default-face))))
    `(erc-notice-face ((t (:foreground ,chyla-dark-comment))))
    `(erc-pal-face ((t (:foreground ,chyla-dark-text :weight bold))))
-   `(erc-prompt-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :weight bold))))
+   `(erc-prompt-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :weight bold))))
    `(erc-timestamp-face ((t (:foreground ,chyla-dark-constant))))
    `(erc-underline-face ((t (:underline t))))
 ;;;;; ert
-   `(ert-test-result-expected ((t (:foreground ,chyla-dark-constant :background ,chyla-dark-white))))
-   `(ert-test-result-unexpected ((t (:foreground ,chyla-dark-string :background ,chyla-dark-white))))
+   `(ert-test-result-expected ((t (:foreground ,chyla-dark-constant :background ,chyla-dark-background))))
+   `(ert-test-result-unexpected ((t (:foreground ,chyla-dark-string :background ,chyla-dark-background))))
 ;;;;; eshell
    `(eshell-prompt ((t (:foreground ,chyla-dark-keyword :weight bold))))
    `(eshell-ls-archive ((t (:foreground ,chyla-dark-text :weight bold))))
@@ -568,7 +568,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; helm
    `(helm-header
      ((t (:foreground ,chyla-dark-comment
-                      :background ,chyla-dark-white
+                      :background ,chyla-dark-background
                       :underline nil
                       :box nil))))
    `(helm-source-header
@@ -578,42 +578,42 @@ Also bind `class' to ((class color) (min-colors 89))."
                       :weight bold
                       :box (:line-width -1 :style released-button)))))
    `(helm-selection ((t (:background ,chyla-dark-highlight :underline nil))))
-   `(helm-selection-line ((t (:background ,chyla-dark-white))))
+   `(helm-selection-line ((t (:background ,chyla-dark-background))))
    `(helm-visible-mark ((t (:foreground ,chyla-dark-white :background ,chyla-dark-text))))
    `(helm-candidate-number ((t (:foreground ,chyla-dark-constant :background ,chyla-dark-selection))))
-   `(helm-separator ((t (:foreground ,chyla-dark-string :background ,chyla-dark-white))))
-   `(helm-time-zone-current ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
-   `(helm-time-zone-home ((t (:foreground ,chyla-dark-string :background ,chyla-dark-white))))
-   `(helm-bookmark-addressbook ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
+   `(helm-separator ((t (:foreground ,chyla-dark-string :background ,chyla-dark-background))))
+   `(helm-time-zone-current ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
+   `(helm-time-zone-home ((t (:foreground ,chyla-dark-string :background ,chyla-dark-background))))
+   `(helm-bookmark-addressbook ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
    `(helm-bookmark-directory ((t (:foreground nil :background nil :inherit helm-ff-directory))))
    `(helm-bookmark-file ((t (:foreground nil :background nil :inherit helm-ff-file))))
-   `(helm-bookmark-gnus ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(helm-bookmark-info ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
-   `(helm-bookmark-man ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-white))))
-   `(helm-bookmark-w3m ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(helm-buffer-not-saved ((t (:foreground ,chyla-dark-string :background ,chyla-dark-white))))
-   `(helm-buffer-process ((t (:foreground ,chyla-dark-function :background ,chyla-dark-white))))
-   `(helm-buffer-saved-out ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(helm-buffer-size ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(helm-ff-directory ((t (:foreground ,chyla-dark-function :background ,chyla-dark-white :weight bold))))
-   `(helm-ff-file ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white :weight normal))))
-   `(helm-ff-executable ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white :weight normal))))
-   `(helm-ff-invalid-symlink ((t (:foreground ,chyla-dark-string :background ,chyla-dark-white :weight bold))))
-   `(helm-ff-symlink ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-white :weight bold))))
+   `(helm-bookmark-gnus ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(helm-bookmark-info ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
+   `(helm-bookmark-man ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-background))))
+   `(helm-bookmark-w3m ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(helm-buffer-not-saved ((t (:foreground ,chyla-dark-string :background ,chyla-dark-background))))
+   `(helm-buffer-process ((t (:foreground ,chyla-dark-function :background ,chyla-dark-background))))
+   `(helm-buffer-saved-out ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(helm-buffer-size ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(helm-ff-directory ((t (:foreground ,chyla-dark-function :background ,chyla-dark-background :weight bold))))
+   `(helm-ff-file ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background :weight normal))))
+   `(helm-ff-executable ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background :weight normal))))
+   `(helm-ff-invalid-symlink ((t (:foreground ,chyla-dark-string :background ,chyla-dark-background :weight bold))))
+   `(helm-ff-symlink ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-background :weight bold))))
    `(helm-ff-prefix ((t (:foreground ,chyla-dark-white :background ,chyla-dark-keyword :weight normal))))
-   `(helm-grep-cmd-line ((t (:foreground ,chyla-dark-function :background ,chyla-dark-white))))
-   `(helm-grep-file ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(helm-grep-finish ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
-   `(helm-grep-lineno ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
+   `(helm-grep-cmd-line ((t (:foreground ,chyla-dark-function :background ,chyla-dark-background))))
+   `(helm-grep-file ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(helm-grep-finish ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
+   `(helm-grep-lineno ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
    `(helm-grep-match ((t (:foreground nil :background nil :inherit helm-match))))
-   `(helm-grep-running ((t (:foreground ,chyla-dark-string :background ,chyla-dark-white))))
+   `(helm-grep-running ((t (:foreground ,chyla-dark-string :background ,chyla-dark-background))))
    `(helm-match ((t (:foreground ,chyla-dark-text :background ,chyla-dark-selection :weight bold))))
-   `(helm-moccur-buffer ((t (:foreground ,chyla-dark-function :background ,chyla-dark-white))))
-   `(helm-mu-contacts-address-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(helm-mu-contacts-name-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
+   `(helm-moccur-buffer ((t (:foreground ,chyla-dark-function :background ,chyla-dark-background))))
+   `(helm-mu-contacts-address-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(helm-mu-contacts-name-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
 ;;;;; helm-swoop
-   `(helm-swoop-target-line-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(helm-swoop-target-word-face ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-white :weight bold))))
+   `(helm-swoop-target-line-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(helm-swoop-target-word-face ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-background :weight bold))))
 ;;;;; highlight-numbers
    `(highlight-numbers-number ((t (:foreground ,chyla-dark-constant))))
 ;;;;; hl-line-mode
@@ -622,23 +622,23 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(hl-line ((,class (:background ,chyla-dark-highlight)) ; old emacsen
               (t :weight bold)))
 ;;;;; hl-sexp
-   `(hl-sexp-face ((,class (:background ,chyla-dark-white))
+   `(hl-sexp-face ((,class (:background ,chyla-dark-background))
                    (t :weight bold)))
 ;;;;; hlinum
    `(linum-highlight-face ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-highlight))))
 ;;;;; hydra
-   `(hydra-face-red ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(hydra-face-amaranth ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(hydra-face-blue ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(hydra-face-pink ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(hydra-face-teal ((t (:foreground ,chyla-dark-function :background ,chyla-dark-white))))
+   `(hydra-face-red ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(hydra-face-amaranth ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(hydra-face-blue ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(hydra-face-pink ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(hydra-face-teal ((t (:foreground ,chyla-dark-function :background ,chyla-dark-background))))
 ;;;;; ivy
-   `(ivy-confirm-face ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
-   `(ivy-match-required-face ((t (:foreground ,chyla-dark-string :background ,chyla-dark-white))))
-   `(ivy-remote ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
-   `(ivy-subdir ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-white))))
+   `(ivy-confirm-face ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
+   `(ivy-match-required-face ((t (:foreground ,chyla-dark-string :background ,chyla-dark-background))))
+   `(ivy-remote ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+   `(ivy-subdir ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-background))))
    `(ivy-current-match ((t (:foreground ,chyla-dark-keyword :weight bold :underline t))))
-   `(ivy-minibuffer-match-face-1 ((t (:background ,chyla-dark-white))))
+   `(ivy-minibuffer-match-face-1 ((t (:background ,chyla-dark-background))))
    `(ivy-minibuffer-match-face-2 ((t (:background ,chyla-dark-comment))))
    `(ivy-minibuffer-match-face-3 ((t (:background ,chyla-dark-comment))))
    `(ivy-minibuffer-match-face-4 ((t (:background ,chyla-dark-text))))
@@ -648,7 +648,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ido-subdir ((t (:foreground ,chyla-dark-keyword))))
    `(ido-indicator ((t (:foreground ,chyla-dark-keyword :background ,chyla-dark-text))))
 ;;;;; iedit-mode
-   `(iedit-occurrence ((t (:background ,chyla-dark-white :weight bold))))
+   `(iedit-occurrence ((t (:background ,chyla-dark-background :weight bold))))
 ;;;;; jabber-mode
    `(jabber-roster-user-away ((t (:foreground ,chyla-dark-comment))))
    `(jabber-roster-user-online ((t (:foreground ,chyla-dark-constant))))
@@ -686,7 +686,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; ledger-mode
    `(ledger-font-payee-uncleared-face ((t (:foreground ,chyla-dark-text :weight bold))))
    `(ledger-font-payee-cleared-face ((t (:foreground ,chyla-dark-text :weight normal))))
-   `(ledger-font-xact-highlight-face ((t (:background ,chyla-dark-white))))
+   `(ledger-font-xact-highlight-face ((t (:background ,chyla-dark-background))))
    `(ledger-font-pending-face ((t (:foreground ,chyla-dark-text weight: normal))))
    `(ledger-font-other-face ((t (:foreground ,chyla-dark-text))))
    `(ledger-font-posting-account-face ((t (:foreground ,chyla-dark-constant))))
@@ -694,14 +694,14 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ledger-font-posting-account-pending-face ((t (:foreground ,chyla-dark-text))))
    `(ledger-font-posting-amount-face ((t (:foreground ,chyla-dark-text))))
    `(ledger-occur-narrowed-face ((t (:foreground ,chyla-dark-text :invisible t))))
-   `(ledger-occur-xact-face ((t (:background ,chyla-dark-white))))
+   `(ledger-occur-xact-face ((t (:background ,chyla-dark-background))))
    `(ledger-font-comment-face ((t (:foreground ,chyla-dark-comment))))
    `(ledger-font-reconciler-uncleared-face ((t (:foreground ,chyla-dark-text :weight bold))))
    `(ledger-font-reconciler-cleared-face ((t (:foreground ,chyla-dark-text :weight normal))))
    `(ledger-font-reconciler-pending-face ((t (:foreground ,chyla-dark-text :weight normal))))
    `(ledger-font-report-clickable-face ((t (:foreground ,chyla-dark-text :weight normal))))
 ;;;;; linum-mode
-   `(linum ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
+   `(linum ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
 ;;;;; lispy
    `(lispy-command-name-face ((t (:background ,chyla-dark-highlight :inherit font-lock-function-name-face))))
    `(lispy-cursor-face ((t (:foreground ,chyla-dark-white :background ,chyla-dark-text))))
@@ -713,11 +713,11 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ruler-mode-comment-column ((t (:inherit 'ruler-mode-fill-column))))
    `(ruler-mode-tab-stop ((t (:inherit 'ruler-mode-fill-column))))
    `(ruler-mode-current-column ((t (:foreground ,chyla-dark-keyword :box t))))
-   `(ruler-mode-default ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
+   `(ruler-mode-default ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
 
 ;;;;; lui
    `(lui-time-stamp-face ((t (:foreground ,chyla-dark-constant))))
-   `(lui-hilight-face ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white))))
+   `(lui-hilight-face ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background))))
    `(lui-button-face ((t (:inherit hover-highlight))))
 ;;;;; macrostep
    `(macrostep-gensym-1
@@ -736,20 +736,20 @@ Also bind `class' to ((class color) (min-colors 89))."
      ((t (:underline t))))
 ;;;;; magit
 ;;;;;; headings and diffs
-   `(magit-section-highlight           ((t (:background ,chyla-dark-white))))
+   `(magit-section-highlight           ((t (:background ,chyla-dark-background))))
    `(magit-section-heading             ((t (:foreground ,chyla-dark-keyword :weight bold))))
    `(magit-section-heading-selection   ((t (:foreground ,chyla-dark-text :weight bold))))
    `(magit-diff-file-heading           ((t (:weight bold))))
-   `(magit-diff-file-heading-highlight ((t (:background ,chyla-dark-white  :weight bold))))
-   `(magit-diff-file-heading-selection ((t (:background ,chyla-dark-white
+   `(magit-diff-file-heading-highlight ((t (:background ,chyla-dark-background  :weight bold))))
+   `(magit-diff-file-heading-selection ((t (:background ,chyla-dark-background
                                                         :foreground ,chyla-dark-text :weight bold))))
-   `(magit-diff-hunk-heading           ((t (:background ,chyla-dark-white))))
-   `(magit-diff-hunk-heading-highlight ((t (:background ,chyla-dark-white))))
-   `(magit-diff-hunk-heading-selection ((t (:background ,chyla-dark-white
+   `(magit-diff-hunk-heading           ((t (:background ,chyla-dark-background))))
+   `(magit-diff-hunk-heading-highlight ((t (:background ,chyla-dark-background))))
+   `(magit-diff-hunk-heading-selection ((t (:background ,chyla-dark-background
                                                         :foreground ,chyla-dark-text))))
    `(magit-diff-lines-heading          ((t (:background ,chyla-dark-text
                                                         :foreground ,chyla-dark-white))))
-   `(magit-diff-context-highlight      ((t (:background ,chyla-dark-white
+   `(magit-diff-context-highlight      ((t (:background ,chyla-dark-background
                                                         :foreground "grey70"))))
    `(magit-diffstat-added   ((t (:foreground ,chyla-dark-constant))))
    `(magit-diffstat-removed ((t (:foreground ,chyla-dark-string))))
@@ -793,9 +793,9 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(magit-branch-local   ((t (:foreground ,chyla-dark-text   :weight bold))))
    `(magit-branch-current ((t (:foreground ,chyla-dark-text   :weight bold :box t))))
    `(magit-head           ((t (:foreground ,chyla-dark-text   :weight bold))))
-   `(magit-refname        ((t (:background ,chyla-dark-white :foreground ,chyla-dark-text :weight bold))))
-   `(magit-refname-stash  ((t (:background ,chyla-dark-white :foreground ,chyla-dark-text :weight bold))))
-   `(magit-refname-wip    ((t (:background ,chyla-dark-white :foreground ,chyla-dark-text :weight bold))))
+   `(magit-refname        ((t (:background ,chyla-dark-background :foreground ,chyla-dark-text :weight bold))))
+   `(magit-refname-stash  ((t (:background ,chyla-dark-background :foreground ,chyla-dark-text :weight bold))))
+   `(magit-refname-wip    ((t (:background ,chyla-dark-background :foreground ,chyla-dark-text :weight bold))))
    `(magit-signature-good      ((t (:foreground ,chyla-dark-comment))))
    `(magit-signature-bad       ((t (:foreground ,chyla-dark-string))))
    `(magit-signature-untrusted ((t (:foreground ,chyla-dark-keyword))))
@@ -849,7 +849,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mew-face-eof-message ((t (:foreground ,chyla-dark-comment))))
    `(mew-face-eof-part ((t (:foreground ,chyla-dark-keyword))))
 ;;;;; mic-paren
-   `(paren-face-match ((t (:foreground ,chyla-dark-function :background ,chyla-dark-white :weight bold))))
+   `(paren-face-match ((t (:foreground ,chyla-dark-function :background ,chyla-dark-background :weight bold))))
    `(paren-face-mismatch ((t (:foreground ,chyla-dark-white :background ,chyla-dark-text :weight bold))))
    `(paren-face-no-match ((t (:foreground ,chyla-dark-white :background ,chyla-dark-string :weight bold))))
 ;;;;; mingus
@@ -879,9 +879,9 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; mumamo
    `(mumamo-background-chunk-major ((t (:background nil))))
    `(mumamo-background-chunk-submode1 ((t (:background ,chyla-dark-selection))))
-   `(mumamo-background-chunk-submode2 ((t (:background ,chyla-dark-white))))
-   `(mumamo-background-chunk-submode3 ((t (:background ,chyla-dark-white))))
-   `(mumamo-background-chunk-submode4 ((t (:background ,chyla-dark-white))))
+   `(mumamo-background-chunk-submode2 ((t (:background ,chyla-dark-background))))
+   `(mumamo-background-chunk-submode3 ((t (:background ,chyla-dark-background))))
+   `(mumamo-background-chunk-submode4 ((t (:background ,chyla-dark-background))))
 ;;;;; neotree
    `(neo-banner-face ((t (:foreground ,chyla-dark-keyword :weight bold))))
    `(neo-header-face ((t (:foreground ,chyla-dark-text))))
@@ -907,7 +907,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(org-agenda-structure
      ((t (:inherit font-lock-comment-face))))
    `(org-archived ((t (:foreground ,chyla-dark-text :weight bold))))
-   `(org-checkbox ((t (:background ,chyla-dark-white :foreground ,chyla-dark-text
+   `(org-checkbox ((t (:background ,chyla-dark-background :foreground ,chyla-dark-text
                                    :box (:line-width 1 :style released-button)))))
    `(org-date ((t (:foreground ,chyla-dark-text :underline t))))
    `(org-deadline-announce ((t (:foreground ,chyla-dark-text))))
@@ -979,7 +979,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(powerline-inactive2 ((t (:inherit mode-line-inactive))))
 ;;;;; proofgeneral
    `(proof-active-area-face ((t (:underline t))))
-   `(proof-boring-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-white))))
+   `(proof-boring-face ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
    `(proof-command-mouse-highlight-face ((t (:inherit proof-mouse-highlight-face))))
    `(proof-debug-message-face ((t (:inherit proof-boring-face))))
    `(proof-declaration-name-face ((t (:inherit font-lock-keyword-face :foreground nil))))
@@ -992,8 +992,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(proof-queue-face ((t (:background ,chyla-dark-comment))))
    `(proof-region-mouse-highlight-face ((t (:inherit proof-mouse-highlight-face))))
    `(proof-script-highlight-error-face ((t (:background ,chyla-dark-comment))))
-   `(proof-tacticals-name-face ((t (:inherit font-lock-constant-face :foreground nil :background ,chyla-dark-white))))
-   `(proof-tactics-name-face ((t (:inherit font-lock-constant-face :foreground nil :background ,chyla-dark-white))))
+   `(proof-tacticals-name-face ((t (:inherit font-lock-constant-face :foreground nil :background ,chyla-dark-background))))
+   `(proof-tactics-name-face ((t (:inherit font-lock-constant-face :foreground nil :background ,chyla-dark-background))))
    `(proof-warning-face ((t (:foreground ,chyla-dark-white :background ,chyla-dark-comment))))
 ;;;;; racket-mode
    `(racket-keyword-argument-face ((t (:inherit font-lock-constant-face))))
@@ -1051,7 +1051,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(sh-heredoc     ((t (:foreground ,chyla-dark-keyword :bold t))))
    `(sh-quoted-exec ((t (:foreground ,chyla-dark-string))))
 ;;;;; show-paren
-   `(show-paren-mismatch ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white :weight bold))))
+   `(show-paren-mismatch ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background :weight bold))))
    `(show-paren-match ((t (:foreground ,chyla-dark-white :background ,chyla-dark-keyword :weight bold))))
 ;;;;; smart-mode-line
    ;; use (setq sml/theme nil) to enable chyla.org for sml
@@ -1073,8 +1073,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(sml/charging ((,class (:foreground ,chyla-dark-constant))))
    `(sml/discharging ((,class (:foreground ,chyla-dark-comment))))
 ;;;;; smartparens
-   `(sp-show-pair-mismatch-face ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-white :weight bold))))
-   `(sp-show-pair-match-face ((t (:background ,chyla-dark-white :weight bold))))
+   `(sp-show-pair-mismatch-face ((t (:foreground ,chyla-dark-comment :background ,chyla-dark-background :weight bold))))
+   `(sp-show-pair-match-face ((t (:background ,chyla-dark-background :weight bold))))
 ;;;;; sml-mode-line
    '(sml-modeline-end-face ((t :inherit default :width condensed)))
 ;;;;; SLIME
@@ -1111,12 +1111,12 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(speedbar-tag-face ((t (:foreground ,chyla-dark-keyword))))
 ;;;;; tabbar
    `(tabbar-button ((t (:foreground ,chyla-dark-comment
-                                    :background ,chyla-dark-white))))
+                                    :background ,chyla-dark-background))))
    `(tabbar-selected ((t (:foreground ,chyla-dark-comment
-                                      :background ,chyla-dark-white
+                                      :background ,chyla-dark-background
                                       :box (:line-width -1 :style pressed-button)))))
    `(tabbar-unselected ((t (:foreground ,chyla-dark-comment
-                                        :background ,chyla-dark-white
+                                        :background ,chyla-dark-background
                                         :box (:line-width -1 :style released-button)))))
 ;;;;; term
    `(term-color-black ((t (:foreground ,chyla-dark-white
@@ -1164,19 +1164,19 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(web-mode-string-face ((t (:inherit ,font-lock-string-face))))
    `(web-mode-type-face ((t (:inherit ,font-lock-type-face))))
    `(web-mode-variable-name-face ((t (:inherit ,font-lock-variable-name-face))))
-   `(web-mode-server-background-face ((t (:background ,chyla-dark-white))))
+   `(web-mode-server-background-face ((t (:background ,chyla-dark-background))))
    `(web-mode-server-comment-face ((t (:inherit web-mode-comment-face))))
    `(web-mode-server-string-face ((t (:inherit web-mode-string-face))))
    `(web-mode-symbol-face ((t (:inherit font-lock-constant-face))))
    `(web-mode-warning-face ((t (:inherit font-lock-warning-face))))
    `(web-mode-whitespaces-face ((t (:background ,chyla-dark-string))))
 ;;;;; whitespace-mode
-   `(whitespace-space ((t (:background ,chyla-dark-white :foreground ,chyla-dark-white))))
-   `(whitespace-hspace ((t (:background ,chyla-dark-white :foreground ,chyla-dark-white))))
+   `(whitespace-space ((t (:background ,chyla-dark-background :foreground ,chyla-dark-white))))
+   `(whitespace-hspace ((t (:background ,chyla-dark-background :foreground ,chyla-dark-white))))
    `(whitespace-tab ((t (:background ,chyla-dark-comment))))
    `(whitespace-newline ((t (:foreground ,chyla-dark-white))))
    `(whitespace-trailing ((t (:background ,chyla-dark-string))))
-   `(whitespace-line ((t (:background ,chyla-dark-white :foreground ,chyla-dark-comment))))
+   `(whitespace-line ((t (:background ,chyla-dark-background :foreground ,chyla-dark-comment))))
    `(whitespace-space-before-tab ((t (:background ,chyla-dark-comment :foreground ,chyla-dark-comment))))
    `(whitespace-indentation ((t (:background ,chyla-dark-keyword :foreground ,chyla-dark-string))))
    `(whitespace-empty ((t (:background ,chyla-dark-keyword))))
@@ -1232,7 +1232,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;; Theme Variables
 (chyla-dark-with-color-variables
   (custom-theme-set-variables
-   'chyla
+   'chyla-dark
 ;;;;; ansi-color
    `(ansi-color-names-vector [,chyla-dark-white ,chyla-dark-string ,chyla-dark-comment ,chyla-dark-keyword
                                           ,chyla-dark-comment ,chyla-dark-comment ,chyla-dark-function ,chyla-dark-comment])
