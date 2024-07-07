@@ -1,4 +1,4 @@
-;;; chyla-dark-theme.el --- Chyla.org - dark green color theme -*- lexical-binding: t; -*-
+;;; chyla-dark-theme.el --- Chyla.org - dark green color theme -*- lexical-binding: nil; -*-
 
 ;; Copyright (C) 2018-2024 Adam Chyła
 ;; Author: Adam Chyła <adam@chyla.org> https://chyla.org/
