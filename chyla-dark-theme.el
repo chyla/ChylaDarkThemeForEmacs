@@ -51,7 +51,7 @@
     ("chyla-dark-header-inactive-bg"     . "#051005")
     ("chyla-dark-html-tag"               . "#63a35c")
     ("chyla-dark-keyword"                . "#5d9b00")
-    ("chyla-dark-selection"              . "#051005")
+    ("chyla-dark-selection"              . "#052905")
     ("chyla-dark-string"                 . "#5ca1dc")
     ("chyla-dark-text"                   . "#c9c9c9")
     ("chyla-dark-background"             . "#121212")
