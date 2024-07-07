@@ -100,6 +100,25 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(success ((t (:foreground ,chyla-dark-comment :weight bold))))
    `(warning ((t (:foreground ,chyla-dark-text :weight bold))))
    `(tooltip ((t (:foreground ,chyla-dark-text :background ,chyla-dark-background))))
+;;;;; ansi-color
+   `(ansi-color-black ((t (:foreground ,chyla-dark-white
+                                       :background ,chyla-dark-selection))))
+   `(ansi-color-red ((t (:foreground ,chyla-dark-comment
+                                     :background ,chyla-dark-comment))))
+   `(ansi-color-green ((t (:foreground ,chyla-dark-comment
+                                       :background ,chyla-dark-comment))))
+   `(ansi-color-yellow ((t (:foreground ,chyla-dark-comment
+                                        :background ,chyla-dark-keyword))))
+   `(ansi-color-blue ((t (:foreground ,chyla-dark-constant
+                                      :background ,chyla-dark-comment))))
+   `(ansi-color-magenta ((t (:foreground ,chyla-dark-comment
+                                         :background ,chyla-dark-string))))
+   `(ansi-color-cyan ((t (:foreground ,chyla-dark-function
+                                      :background ,chyla-dark-comment))))
+   `(ansi-color-white ((t (:foreground ,chyla-dark-comment
+                                       :background ,chyla-dark-comment))))
+   '(ansi-default-fg-color ((t (:inherit ansi-color-white))))
+   '(ansi-default-bg-color ((t (:inherit ansi-color-black))))
 ;;;;; compilation
    `(compilation-column-face ((t (:foreground ,chyla-dark-keyword))))
    `(compilation-enter-directory-face ((t (:foreground ,chyla-dark-comment))))
