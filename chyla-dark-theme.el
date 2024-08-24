@@ -53,7 +53,7 @@
     ("chyla-dark-keyword"                . "#5d9b00")
     ("chyla-dark-selection"              . "#052905")
     ("chyla-dark-string"                 . "#5ca1dc")
-    ("chyla-dark-text"                   . "#c9c9c9")
+    ("chyla-dark-text"                   . "#dddddd")
     ("chyla-dark-background"             . "#121212")
     ("chyla-dark-white"                  . "#fbfbfb")
     ("chyla-dark-red"                    . "#a32b2b")
